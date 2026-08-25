@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================================
-# euvd-monitor.sh — Surveillance des nouvelles vulnérabilités exploitées EUVD
-# Usage : ./euvd-monitor.sh [intervalle_secondes]
+# 5-euvd-monitor.sh — Surveillance des nouvelles vulnérabilités exploitées EUVD
+# Usage : ./5-euvd-monitor.sh [intervalle_secondes]
 # =============================================================================
 
 set -euo pipefail

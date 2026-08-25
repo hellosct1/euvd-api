@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
-# Dernières vulnérabilités publiées — /api/lastvulnerabilities
-# Dépendances : curl, jq
+# Vulnérabilités critiques (score CVSS élevé) — /api/criticalvulnerabilities
+
 
 set -euo pipefail
 
 readonly BASE_URL="https://euvdservices.enisa.europa.eu"
 
-response=$(curl -sf "${BASE_URL}/api/lastvulnerabilities")
+echo "les dernières vulnérabilités critiques"
 
+response=$(curl -sf "${BASE_URL}/api/criticalvulnerabilities")
+
+# Résultat
 printf "| %-22s | %5s | %3s | %6s | %-20s | %-40s | %-60s |\n" \
     "ID EUVD" "Score" "Ver" "EPSS%" "Publié" "CVE / GHSA" "Description"
 printf "| %-22s | %5s | %3s | %6s | %-20s | %-40s | %-60s |\n" \

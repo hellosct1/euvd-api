@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-# Détail complet de la première vulnérabilité critique — /api/enisaid
-# Dépendances : curl, jq
+# Détail complet de la dernière vulnérabilité critique — /api/enisaid
 
 set -euo pipefail
 
 readonly BASE_URL="https://euvdservices.enisa.europa.eu"
 
 first_id=$(curl -sf "${BASE_URL}/api/criticalvulnerabilities" | jq -r '.[0].id')
-
 response=$(curl -sf "${BASE_URL}/api/enisaid?id=${first_id}")
 
-# Tableau vertical clé | valeur
+echo "Détail complet de la dernière vulnérabilité critique"
+
+# Résultat
 printf "| %-20s | %s |\n" "Champ" "Valeur"
 printf "| %-20s | %s |\n" "--------------------" "------------------------------------------------------------"
 

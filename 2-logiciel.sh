@@ -1,16 +1,35 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 2-logiciel.sh — Recherche filtrée sur l'API EUVD (ENISA)
+# 2-logiciel.sh — Recherche filtrée sur l'API EUVD 
+# Help : ./2-logiciel.sh --help
 # Usage : ./2-logiciel.sh [--vendor=<nom>] [--fromDate=YYYY-MM-DD] [--toDate=YYYY-MM-DD]
 #                         [--size=<n>] [--fromEpss=<0-100>] [--exploited=true]
-# Exemple : ./2-logiciel.sh --vendor=Cisco --fromDate=2026-01-01 --size=20
+# Exemple : ./2-logiciel.sh --vendor=nodejs --fromDate=2026-01-01 --size=20
 # Exemple : ./2-logiciel.sh --fromEpss=50 --exploited=true --size=100
-# Dépendances : curl, jq
 # =============================================================================
 
 set -euo pipefail
 
 readonly BASE_URL="https://euvdservices.enisa.europa.eu"
+
+print_help() {
+        cat <<EOF
+Usage : $0 [options]
+
+Options :
+    --vendor=<nom>         Filtre par nom d'editeur ou logiciel
+    --fromDate=YYYY-MM-DD  Date de debut
+    --toDate=YYYY-MM-DD    Date de fin
+    --fromEpss=<0-100>     Score EPSS minimum
+    --exploited=true       Filtre les vulnerabilities exploitees
+    --size=<n>             Nombre de resultats (defaut : 10)
+    --help, -h             Affiche cette aide
+
+Exemples :
+    $0 --vendor=nodejs --fromDate=2026-01-01 --size=20
+    $0 --fromEpss=50 --exploited=true --size=100
+EOF
+}
 
 VENDOR=""
 FROM_DATE=""
@@ -21,6 +40,10 @@ SIZE="10"
 
 for arg in "$@"; do
     case "$arg" in
+        --help|-h)
+            print_help
+            exit 0
+            ;;
         --vendor=*)    VENDOR="${arg#*=}" ;;
         --fromDate=*)  FROM_DATE="${arg#*=}" ;;
         --toDate=*)    TO_DATE="${arg#*=}" ;;
@@ -29,13 +52,11 @@ for arg in "$@"; do
         --size=*)      SIZE="${arg#*=}" ;;
         *)
             echo "Argument inconnu : $arg" >&2
-            echo "Usage : $0 [--vendor=<nom>] [--fromDate=YYYY-MM-DD] [--toDate=YYYY-MM-DD] [--fromEpss=<0-100>] [--exploited=true] [--size=<n>]" >&2
+            print_help >&2
             exit 1
             ;;
     esac
 done
-
-# [[ -n "$VENDOR"    ]] && QUERY+="&vendor=$(python3 -c "import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))" "$VENDOR")"
 
 
 QUERY="size=${SIZE}"
@@ -58,7 +79,7 @@ total=$(echo "$response" | jq -r '.total // 0')
 echo "Total : ${total}"
 echo
 
-# En-tête du tableau Markdown
+# Résultat
 printf "| %-22s | %5s | %3s | %6s | %-20s | %-40s | %-60s |\n" \
     "ID EUVD" "Score" "Ver" "EPSS%" "Publié" "CVE / GHSA" "Description"
 printf "| %-22s | %5s | %3s | %6s | %-20s | %-40s | %-60s |\n" \

@@ -1,9 +1,8 @@
  
 #!/usr/bin/env bash
 # =============================================================================
-# euvd-query.sh — Interrogation de l'API EUVD (ENISA)
-# Usage : ./euvd-query.sh [option]
-# Dépendances : curl, jq
+# 4-euvd-query.sh — Interrogation de l'API EUVD (ENISA)
+# Usage : ./4-euvd-query.sh [option]
 # =============================================================================
 
 set -euo pipefail
@@ -20,7 +19,7 @@ check_deps() {
     done
 }
 
-# Affichage coloré
+# Choix des couleurs
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
