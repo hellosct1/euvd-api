@@ -1,6 +1,7 @@
 # EUVD API
 
-> **EUVD** (European Union Vulnerability Database, ENISA) https://euvdservices.enisa.europa.eu/api
+> **EUVD** (European Union Vulnerability Database, ENISA) 
+> Site officiel https://euvdservices.enisa.europa.eu/api
 
 ## Remarque
 
@@ -26,7 +27,7 @@ Doc officiel : https://euvd.enisa.europa.eu/apidoc
 | 4-euvd-query.sh | Interrogation de API EUVD  | 
 | 5-euvd-monitor.sh | Surveillance des nouvelles vulnérabilités exploitées EUVD | 
 | 7-euvd-download.sh | Téléchargement complet de la base EUVD  | 
-| 10-sql |  | 
+| 9-sql |  | 
 
 
 
@@ -45,7 +46,7 @@ euvd.sh
 ```
 
 
-## Structure d'une entrée EUVD (fichier euvd.sh)
+#### Structure d'une entrée EUVD (fichier euvd.sh)
 
 Chaque vulnérabilité exposée par l'API contient les champs suivants :
 
@@ -67,10 +68,10 @@ Chaque vulnérabilité exposée par l'API contient les champs suivants :
 | `references` | Liens vers les sources et correctifs |
 
 
-Entrée communautaire https://github.com/bytew0lf/EUVD-API
+> Site communautaire https://github.com/bytew0lf/EUVD-API
 
 
-## Exemples — Shell
+#### Exemples — Shell
 
 ```bash
 # 8 dernières vulnérabilités publiées
