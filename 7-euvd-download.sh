@@ -16,7 +16,7 @@ set -euo pipefail
 
 readonly BASE_URL="https://euvdservices.enisa.europa.eu"
 readonly PAGE_SIZE=100
-readonly OUTPUT_DIR="${1:-./data}"
+readonly OUTPUT_DIR="${1:-../euvd-api-data/data}"
 readonly DATE=$(date +%Y-%m-%d)
 readonly PAGES_DIR="${OUTPUT_DIR}/pages"
 readonly FINAL_FILE="${OUTPUT_DIR}/euvd_${DATE}.json"
