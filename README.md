@@ -73,6 +73,8 @@ Chaque vulnérabilité exposée par l'API contient les champs suivants :
 
 #### Exemples — Shell
 
+Quelques exemples d'utilisations 
+
 ```bash
 # 8 dernières vulnérabilités publiées
 ./euvd.sh last
