@@ -37,12 +37,12 @@ Doc officiel : https://euvd.enisa.europa.eu/apidoc
 
 | Fichier | Description |
 |---|---|
-| euvd.sh |  | 
+| euvd-cli.sh |  | 
 
 Exécution
 
 ```bash
-euvd.sh
+euvd-cli.sh
 ```
 
 
