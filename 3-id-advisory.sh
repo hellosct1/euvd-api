@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 3-id-advisory.sh — Détail d'un advisory EUVD par ID
+# Détail d'un advisory EUVD par ID
 # Usage   : ./3-id-advisory.sh [--id=cisco-sa-ata19x-multi-RDTEqRsy]
 # =============================================================================
 

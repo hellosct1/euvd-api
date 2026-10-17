@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 2-logiciel.sh — Recherche filtrée sur l'API EUVD 
-# Help : ./2-logiciel.sh --help
-# Usage : ./2-logiciel.sh [--vendor=<nom>] [--fromDate=YYYY-MM-DD] [--toDate=YYYY-MM-DD]
+# Recherche filtrée sur l'API EUVD 
+# Help : ./2-search-logiciel.sh --help
+# Usage : ./2-search-logiciel.sh [--vendor=<nom>] [--fromDate=YYYY-MM-DD] [--toDate=YYYY-MM-DD]
 #                         [--size=<n>] [--fromEpss=<0-100>] [--exploited=true]
-# Exemple : ./2-logiciel.sh --vendor=nodejs --fromDate=2026-01-01 --size=20
-# Exemple : ./2-logiciel.sh --fromEpss=50 --exploited=true --size=100
+# Exemple : ./2-search-logiciel.sh --vendor=nodejs --fromDate=2026-01-01 --size=20
+# Exemple : ./2-search-logiciel.sh --fromEpss=50 --exploited=true --size=100
 # =============================================================================
 
 set -euo pipefail

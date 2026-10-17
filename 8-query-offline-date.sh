@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 8-query-date.sh — Vulnérabilités d'un fournisseur publiées durant les 7 derniers jours
-# Usage : ./8-query-date.sh <vendor> [fichier.json]
+# Vulnérabilités d'un fournisseur publiées durant les 7 derniers jours
+# Usage : ./8-query-offline-date.sh <vendor> [fichier.json]
 # Dépendance : jq
 # =============================================================================
 

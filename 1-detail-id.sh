@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
+# =============================================================================
 # Détail complet de la dernière vulnérabilité critique — /api/enisaid
+# Usage : ./1-detail-id.sh
+# =============================================================================
+
 
 set -euo pipefail
 

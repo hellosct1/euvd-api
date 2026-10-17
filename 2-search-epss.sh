@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 2-search-epss.sh — Recherche EPSS et vulnérabilités exploitées sur l'API EUVD
+# Recherche EPSS et vulnérabilités exploitées sur l'API EUVD
 # Usage : ./2-search-epss.sh [--fromEpss=<0-100>] [--exploited=true|false] [--size=<n>]
 # Exemple : ./2-search-epss.sh --fromEpss=50 --exploited=true --size=100
 # =============================================================================

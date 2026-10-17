@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 3-id.sh — Détail d'une vulnérabilité EUVD par ID
-# Usage   : ./3-id.sh --id=EUVD-2025-13580
+# Détail d'une vulnérabilité EUVD par ID
+# Usage   : ./3-id-euvd.sh --id=EUVD-2025-13580
 # =============================================================================
 
 set -euo pipefail

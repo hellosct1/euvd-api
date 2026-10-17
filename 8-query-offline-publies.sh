@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 8-query-publies.sh — Vulnérabilités d'un fournisseur publiées en 2025
-# Usage : ./8-query-publies.sh <vendor> [fichier.json]
+# Vulnérabilités d'un fournisseur publiées en 2025
+# Usage : ./8-query-offline-publies.sh <vendor> [fichier.json]
 # Dépendance : jq
 # =============================================================================
 

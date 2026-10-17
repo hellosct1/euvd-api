@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 7-euvd-dl-logiciel.sh — Téléchargement des vulnérabilités EUVD par fournisseur
+# Téléchargement des vulnérabilités EUVD par fournisseur
 #
 # Ce script télécharge toutes les pages correspondant au fournisseur demandé,
 # sauvegarde les pages JSON puis les fusionne en un seul fichier.

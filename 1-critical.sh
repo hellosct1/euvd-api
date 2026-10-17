@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
+# =============================================================================
 # Vulnérabilités critiques (score CVSS élevé) — /api/criticalvulnerabilities
-
+# Usage : ./1-critical.sh
+# =============================================================================
 
 set -euo pipefail
 

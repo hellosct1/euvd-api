@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 3-id-cve.sh — Détail d'une vulnérabilité EUVD par CVE
+# Détail d'une vulnérabilité EUVD par CVE
 # Usage   : ./3-id-cve.sh [--id=CVE-2024-0864]
 # =============================================================================
 

@@ -1,8 +1,8 @@
  
 #!/usr/bin/env bash
 # =============================================================================
-# 4-euvd-query.sh — Interrogation de l'API EUVD (ENISA)
-# Usage : ./4-euvd-query.sh [option]
+# 4-check-euvd.sh — Interrogation de l'API EUVD (ENISA)
+# Usage : ./4-check-euvd.sh [option]
 # =============================================================================
 
 set -euo pipefail

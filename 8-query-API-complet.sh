@@ -1,8 +1,7 @@
- 
 #!/usr/bin/env bash
 # =============================================================================
-# 5-query-complet.sh — Interrogation de l'API EUVD (ENISA)
-# Usage : ./5-query-complet.sh [option]
+# Interrogation de l'API EUVD (ENISA)
+# Usage : ./8-query-API-complet.sh [option]
 # =============================================================================
 
 set -euo pipefail

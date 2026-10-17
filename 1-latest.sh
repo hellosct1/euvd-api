@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+# =============================================================================
 # Dernières vulnérabilités publiées — /api/lastvulnerabilities
+# Usage : ./1-latest.sh
+# =============================================================================
 
 
 set -euo pipefail

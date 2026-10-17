@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 8-query-score.sh — Distribution des scores CVSS par fournisseur
-# Usage : ./8-query-score.sh <vendor> [fichier.json]
+# Distribution des scores CVSS par fournisseur
+# Usage : ./8-query-offline-score.sh <vendor> [fichier.json]
 # Dépendance : jq
 # =============================================================================
 

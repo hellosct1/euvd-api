@@ -22,12 +22,19 @@ Doc officiel : https://euvd.enisa.europa.eu/apidoc
 | 1-exploited.sh | Vulnérabilités activement exploitées | 
 | 1-critical.sh | les 8 dernières vulnérabilités critiques |
 | 1-detail-id.sh | Détail complet de la dernière vulnérabilité critique | 
-| 2-logiciel.sh | Recherche un logiciel sur API EUVD  | 
+| 2-search-logiciel.sh | Recherche un logiciel sur API EUVD | 
+| 2-search-epss.sh | Recherche EPSS et vulnérabilités exploitées sur l'API EUVD | 
+| 2-search-remote.sh | Recherche de vulnérabilités remote sur l'API EUVD | 
 | 3-id.sh | Détail vulnérabilité EUVD par ID | 
-| 4-euvd-query.sh | Interrogation de API EUVD  | 
+| 4-euvd-query.sh | Interrogation de API EUVD | 
 | 5-euvd-monitor.sh | Surveillance des nouvelles vulnérabilités exploitées EUVD | 
-| 7-euvd-download.sh | Téléchargement complet de la base EUVD  | 
-
+| 7-euvd-download-logiciel.sh | Téléchargement des vulnérabilités EUVD par fournisseur |
+| 7-euvd-download-pages.sh | Téléchargement complet de la base EUVD | 
+| 8-query-API-complet.sh | Interrogation de l'API EUVD (ENISA) | 
+| 8-query-offline-date.sh | Vulnérabilités d'un fournisseur publiées durant les 7 derniers jours | 
+| 8-query-offline-exploitees.sh | Top 10 des vulnérabilités sévères exploitées | 
+| 8-query-offline-publies.sh | Vulnérabilités d'un fournisseur publiées en 2025 | 
+| 8-query-offline-score.sh | Distribution des scores CVSS par fournisseur | 
 
 
 

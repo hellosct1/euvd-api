@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# 2-search-remote.sh — Recherche de vulnérabilités remote sur l'API EUVD
+# Recherche de vulnérabilités remote sur l'API EUVD
 # Usage : ./2-search-remote.sh [--fromScore=<0-10>] [--toScore=<0-10>] [--exploited=true|false] [--text=<terme>] [--size=<n>]
 # Exemple : ./2-search-remote.sh --fromScore=8 --toScore=10 --exploited=true --text=remote --size=100
 # =============================================================================

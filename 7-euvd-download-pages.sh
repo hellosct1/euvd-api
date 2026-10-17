@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# euvd-download.sh — Téléchargement complet de la base EUVD
+# Téléchargement complet de la base EUVD
 #
 # Ce script itère sur toutes les pages de l'API EUVD et sauvegarde
 # les données dans des fichiers JSON, puis les fusionne en un seul fichier.
