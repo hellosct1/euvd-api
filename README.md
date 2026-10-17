@@ -5,16 +5,14 @@
 
 ## Remarque
 
-Cette documentation d'API n'est pas officielle (source : dépôt communautaire
-[bytew0lf/EUVD-API](https://github.com/bytew0lf/EUVD-API)). Se référer à
-`https://euvd.enisa.europa.eu/apidoc` pour la documentation officielle, qui
-peut évoluer.
+Cette documentation d'API n'est pas officielle (source : dépôt communautaire [bytew0lf/EUVD-API](https://github.com/bytew0lf/EUVD-API)). Se référer à `https://euvd.enisa.europa.eu/apidoc` pour la documentation officielle, qui peut évoluer.
 
 Doc officiel : https://euvd.enisa.europa.eu/apidoc
 
-## Fichiers 
 
-### Echantillon (sample)
+## Echantillon (sample)
+
+Différents appels avec présentation structuré en tableau
 
 | Fichier | Description |
 |---|---|
@@ -40,9 +38,9 @@ Doc officiel : https://euvd.enisa.europa.eu/apidoc
 
 
 
-### API EUVD
+## API EUVD
 
-
+Version client pour appelé dans le même fichier l'API EUVD
 
 | Fichier | Description |
 |---|---|
@@ -55,7 +53,7 @@ Exécution
 ```
 
 
-#### Structure d'une entrée EUVD (fichier euvd.sh)
+### Structure d'une entrée EUVD (fichier euvd.sh)
 
 Chaque vulnérabilité exposée par l'API contient les champs suivants :
 
@@ -80,7 +78,7 @@ Chaque vulnérabilité exposée par l'API contient les champs suivants :
 > Site communautaire https://github.com/bytew0lf/EUVD-API
 
 
-#### Exemples — Shell
+### Exemples — Shell
 
 Quelques exemples d'utilisations 
 
@@ -113,7 +111,30 @@ Quelques exemples d'utilisations
 ./euvd-cli.sh last -o dernieres.json
 ```
 
+## line-command
+
+Des échantillons avec des exemples pour utiliser l'API EUVD et avoir un résultat brut au format JSON
+
+
+| Fichier | Description |
+|---|---|
+| 1-critical.sh | Vulnérabilités critiques (score CVSS élevé) |
+| 1-exploited.sh | Vulnérabilités activement exploitées |
+| 1-latest.sh | Dernières vulnérabilités publiées |
+| 2-search-epss.sh | Recherche de vulnérabilités avec un score EPSS élevé |
+| 2-search-logiciel.sh | Recherche de vulnérabilités pour un logiciel spécifique |
+| 2-search-remote.sh | Recherche de vulnérabilités à distance (remote) |
+| 3-id-advisory.sh | Détail d'un advisory EUVD par ID |
+| 3-id-cve.sh | Détail d'une vulnérabilité EUVD par CVE |
+| 3-id-euvd.sh | Détail d'une vulnérabilité EUVD par ID |
+| 4-check-euvd.sh | État d'exploitation d'une vulnérabilité spécifique |
+| 7-euvd-download.sh | Téléchargement du dump KEV |
+
+
+
+
 (R) Hello / Hello-design - 2026
+
 Licence MIT
 
 

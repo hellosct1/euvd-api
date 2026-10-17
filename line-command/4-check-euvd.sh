@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# =============================================================================
+# Recherche de l'état d'exploitation d'une vulnérabilité spécifique — /api/search
+# Usage : ./4-check-euvd.sh
+# =============================================================================
+
+echo "Recherche de l'état d'exploitation d'une vulnérabilité spécifique"
+echo "Résultat au format JSON"
 
 set -euo pipefail
 CVE="${1:?usage: check-euvd.sh CVE-YYYY-NNNN}"
