@@ -86,33 +86,34 @@ Quelques exemples d'utilisations
 
 ```bash
 # 8 dernières vulnérabilités publiées
-./euvd.sh last
+./euvd-cli.sh last
 
 # 8 dernières vulnérabilités exploitées
-./euvd.sh exploited
+./euvd-cli.sh exploited
 
 # 8 dernières vulnérabilités critiques
-./euvd.sh critical
+./euvd-cli.sh critical
 
 # Recherche par logiciel, uniquement les vulnérabilités exploitées
-./euvd.sh search -v nodejs -e -n 20
+./euvd-cli.sh search -v nodejs -e -n 20
 
 # Recherche texte libre avec score CVSS élevé
-./euvd.sh search -t "remote code execution" -s 9 -S 10
+./euvd-cli.sh search -t "remote code execution" -s 9 -S 10
 
 # Détails d'une vulnérabilité par ID EUVD
-./euvd.sh id EUVD-2024-45012
+./euvd-cli.sh id EUVD-2024-45012
 
 # Détails d'une advisory
-./euvd.sh advisory oxas-adv-2024-0002
+./euvd-cli.sh advisory oxas-adv-2024-0002
 
 # Dump complet des vulnérabilités exploitées connues (CISA KEV + EU KEV)
-./euvd.sh kev -o kev-dump.json
+./euvd-cli.sh kev -o kev-dump.json
 
 # Sauvegarder un résultat dans un fichier
-./euvd.sh last -o dernieres.json
+./euvd-cli.sh last -o dernieres.json
 ```
 
+(R) Hello / Hello-design - 2026
 
 
 
