@@ -114,6 +114,6 @@ Quelques exemples d'utilisations
 ```
 
 (R) Hello / Hello-design - 2026
-
+Licence MIT
 
 
