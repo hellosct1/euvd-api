@@ -25,7 +25,9 @@ Doc officiel : https://euvd.enisa.europa.eu/apidoc
 | 2-search-logiciel.sh | Recherche un logiciel sur API EUVD | 
 | 2-search-epss.sh | Recherche EPSS et vulnérabilités exploitées sur l'API EUVD | 
 | 2-search-remote.sh | Recherche de vulnérabilités remote sur l'API EUVD | 
-| 3-id.sh | Détail vulnérabilité EUVD par ID | 
+| 3-id-euvd.sh | Détail d'une vulnérabilité EUVD par ID | 
+| 3-id-cve.sh | Détail d'une vulnérabilité EUVD par CVE | 
+| 3-id-advisory.sh | Détail d'un advisory EUVD par ID | 
 | 4-euvd-query.sh | Interrogation de API EUVD | 
 | 5-euvd-monitor.sh | Surveillance des nouvelles vulnérabilités exploitées EUVD | 
 | 7-euvd-download-logiciel.sh | Téléchargement des vulnérabilités EUVD par fournisseur |
@@ -38,18 +40,18 @@ Doc officiel : https://euvd.enisa.europa.eu/apidoc
 
 
 
-### Complet (full)
+### API EUVD
 
 
 
 | Fichier | Description |
 |---|---|
-| euvd-cli.sh |  | 
+| euvd-cli.sh | Version client avec l'utilisation de l'API EUVD | 
 
 Exécution
 
 ```bash
-euvd-cli.sh
+./euvd-cli.sh
 ```
 
 

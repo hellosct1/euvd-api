@@ -44,7 +44,7 @@ DEFAULT_FILE="${DATA_ROOT}/euvd_${VENDOR_SLUG}_${DATE}.json"
 JSON_FILE="${2:-$DEFAULT_FILE}"
 if [[ ! -f "$JSON_FILE" ]]; then
     echo "Erreur : fichier EUVD introuvable : $JSON_FILE" >&2
-    echo "Téléchargez d'abord les données avec ./7-euvd-dl-logiciel.sh --vendor $VENDOR." >&2
+    echo "Téléchargez d'abord les données avec ./7-euvd-download-logiciel.sh --vendor $VENDOR." >&2
     exit 1
 fi
 
