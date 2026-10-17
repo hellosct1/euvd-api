@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+# =============================================================================
+# 8-query-publies.sh — Vulnérabilités d'un fournisseur publiées en 2025
+# Usage : ./8-query-publies.sh <vendor> [fichier.json]
+# Dépendance : jq
+# =============================================================================
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+DATA_ROOT="${SCRIPT_DIR}/data"
+DATE="$(date +%Y-%m-%d)"
+
+usage() {
+    printf 'Usage : %s <vendor> [fichier.json]\n' "$0"
+    printf 'Exemple : %s <vendor>\n' "$0"
+    printf 'Fichier JSON par défaut : %s/euvd_<vendor>_%s.json\n' "$DATA_ROOT" "$DATE"
+}
+
+if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
+    usage
+    exit 0
+fi
+
+if [[ "$#" -lt 1 || -z "${1:-}" ]]; then
+    echo "Erreur : le nom du fournisseur est obligatoire." >&2
+    usage >&2
+    exit 2
+fi
+
+if [[ "$#" -gt 2 ]]; then
+    usage >&2
+    exit 2
+fi
+
+if ! command -v jq >/dev/null 2>&1; then
+    echo "Erreur : jq est requis mais n'est pas installé." >&2
+    exit 1
+fi
+
+VENDOR="$1"
+VENDOR_SLUG="$(printf '%s' "$VENDOR" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9_-]/_/g')"
+DEFAULT_FILE="${DATA_ROOT}/euvd_${VENDOR_SLUG}_${DATE}.json"
+JSON_FILE="${2:-$DEFAULT_FILE}"
+if [[ ! -f "$JSON_FILE" ]]; then
+    echo "Erreur : fichier EUVD introuvable : $JSON_FILE" >&2
+    echo "Téléchargez d'abord les données avec ./7-euvd-dl-logiciel.sh --vendor $VENDOR." >&2
+    exit 1
+fi
+
+printf 'Vulnérabilités publiées en 2025 pour : %s\n' "$VENDOR"
+printf '| %-22s | %5s | %-26s | %-80s |\n' "ID EUVD" "CVSS" "Publié" "Description"
+printf '| %-22s | %5s | %-26s | %-80s |\n' \
+    "----------------------" "-----" "--------------------------" \
+    "--------------------------------------------------------------------------------"
+
+# datePublished est un texte du type "Feb 29, 2024, 12:56:23 PM"
+jq -r --arg vendor "$VENDOR" '
+    [ .[]
+      | select(any(.enisaIdVendor[]?.vendor.name;
+          (ascii_downcase | contains($vendor | ascii_downcase))))
+      | select((.datePublished // "") | test(", 2025,"))
+    ]
+    | sort_by(-(.baseScore // -1))[]
+    | [(.id // "N/A"), ((.baseScore // "N/A") | tostring),
+       (.datePublished // "N/A"),
+       (.description // "" | gsub("[\\r\\n]+"; " ") | .[0:80])]
+    | @tsv
+' "$JSON_FILE" | while IFS=$'\t' read -r id score date description; do
+    printf '| %-22s | %5s | %-26s | %-80s |\n' "$id" "$score" "$date" "$description"
+done

@@ -27,7 +27,7 @@ Doc officiel : https://euvd.enisa.europa.eu/apidoc
 | 4-euvd-query.sh | Interrogation de API EUVD  | 
 | 5-euvd-monitor.sh | Surveillance des nouvelles vulnérabilités exploitées EUVD | 
 | 7-euvd-download.sh | Téléchargement complet de la base EUVD  | 
-| 9-sql |  | 
+
 
 
 
